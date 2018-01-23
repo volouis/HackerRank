@@ -1,0 +1,59 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    static boolean isAnagram(String a, String b) {
+        // Complete the function
+        a = a.toLowerCase();
+        b = b.toLowerCase();
+        int value;
+        
+        if(a.length() != b.length()){
+            return false;
+        }
+        
+        HashMap<Character, Integer> mapa = new HashMap<Character, Integer>();
+        HashMap<Character, Integer> mapb = new HashMap<Character, Integer>();
+
+        
+        for (int i=0; i < a.length(); i++){
+            if(mapa.containsKey(a.charAt(i))){
+                value = mapa.get(a.charAt(i));
+                value ++;
+                mapa.put(a.charAt(i),value);
+            }else{
+                mapa.put(a.charAt(i),1);
+            }
+            
+            if(mapb.containsKey(b.charAt(i))){
+                value = mapb.get(b.charAt(i));
+                value ++;
+                mapb.put(b.charAt(i),value);
+            }else{
+                mapb.put(b.charAt(i),1);
+            }
+            
+        }
+        
+        if(mapa.size() != mapb.size()){
+            return false;
+        }
+        
+        for(Character key : mapa.keySet()){
+            if(mapa.get(key) != mapb.get(key)){
+                return false;
+            }
+        }
+        
+        return true;
+    }
+      public static void main(String[] args) {
+    
+        Scanner scan = new Scanner(System.in);
+        String a = scan.next();
+        String b = scan.next();
+        scan.close();
+        boolean ret = isAnagram(a, b);
+        System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );
+    }
+}
