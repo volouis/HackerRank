@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+        // Write your code here.
+        scan.close();
+        
+        String[] part = s.split("[ !,?\\._'@]+",0);
+        
+        if(part.length == 0){
+            System.out.println(0);
+        }else if(part[0].equals("")){
+            System.out.println(part.length - 1);
+            for(int i = 1; i < part.length; i++){
+                System.out.println(part[i]);
+            }
+        }else{
+            System.out.println(part.length);
+            for(int i = 0; i < part.length; i++){
+                System.out.println(part[i]);
+            }
+        }
+    }
+}
