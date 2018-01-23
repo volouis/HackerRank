@@ -1,17 +1,16 @@
-public class Solution {
-    public static void main(String[] args){
-        Class student = ~~~Complete this line~~~;
-        Method[] methods = ~~~Complete this line~~~;
+import java.util.*;
 
-        ArrayList<String> methodList = new ArrayList<>();
-            
-        for(~~~Complete this line~~~){
-            methodList.add(~~~Complete this line~~~);
-        }
-        Collections.sort(methodList);
-            
-        for(String name: methodList){
-            System.out.println(name);
-        }
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        int c = scan.nextInt();
+
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+
     }
 }
