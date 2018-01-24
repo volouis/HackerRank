@@ -8,7 +8,7 @@ class Solution{
        int n=in.nextInt();
        in.nextLine();
        
-       Map phone = new HashMap();
+       HashMap<String, Integer> phone = new HashMap<String, Integer>();
        String name;
        int number;     
        
