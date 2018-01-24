@@ -1,0 +1,31 @@
+import java.util.*;
+import java.io.*;
+
+class Solution{
+   public static void main(String []argh){
+       
+       Scanner in = new Scanner(System.in);
+       int n=in.nextInt();
+       in.nextLine();
+       
+       Map phone = new HashMap();
+       String name;
+       int number;     
+       
+       for(int i = 0; i < n; i++){
+           name = in.nextLine();
+           number = in.nextInt();
+           in.nextLine();
+           phone.put(name, number);
+       }
+
+       while(in.hasNext()){
+           String a = in.nextLine();
+           if(phone.containsKey(a)){
+               System.out.println(a + "=" + phone.get(a));
+           }else{
+               System.out.println("Not found");
+           }
+       }
+   }
+}
